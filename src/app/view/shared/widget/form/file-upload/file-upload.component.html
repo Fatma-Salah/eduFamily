@@ -1,0 +1,96 @@
+<div class="">
+  <p-fileUpload [formControl]="control" name="myfile[]" url="https://www.primefaces.org/cdn/api/upload.php" maxFileSize="5000000" 
+    [multiple]="true" (onUpload)="onTemplatedUpload()" (onSelect)="onSelectedFiles($event)">
+    <ng-template pTemplate="header" let-files let-chooseCallback="chooseCallback" let-clearCallback="clearCallback"
+      let-uploadCallback="uploadCallback">
+      <div class=" upload_image d-flex flex-wrap justify-content-between align-items-center flex-1 gap-2">
+        <div class="d-flex gap-2 upload_btn">
+          <p-button label="add attachment" (onClick)="choose($event, chooseCallback)" icon="pi pi-cloud-upload"
+            [rounded]="true" [outlined]="false" />
+        </div>
+      </div>
+    </ng-template>
+
+  </p-fileUpload>
+
+ 
+  @if(files.length>0){
+  @if(images.length>0){
+  <div class="attachment">
+    <p class="attachment_title"> <i class="ri-folder-image-fill attachment_title_icon"></i> images ({{images.length}} )
+    </p>
+    <div class="image_container">
+      <ng-container *ngFor="let image of images; let i = index">
+        <div class="image">
+          <img role="presentation" [alt]="image.name" [src]="image.objectURL" appFullScreen/>
+          <p-button icon="pi pi-times" class="remove" (click)="onRemoveUploadedFile($event, image, i)" [rounded]="true"
+            severity="contrast" />
+
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  }
+  @if(videos.length>0){
+  <div class="attachment">
+    <p class="attachment_title"> <i class="ri-folder-video-fill attachment_title_icon"></i> videos ({{videos.length}} )
+    </p>
+    <div class="video_container">
+      <ng-container *ngFor="let video of videos; let i = index">
+        <div class="video"> 
+          <video width="100%" height="100%" controls  >
+            <source [src]="video.objectURL" [type]="video.type"> 
+            Your browser does not support the video tag.
+          </video>
+          <p-button icon="pi pi-times" class="remove" (click)="onRemoveUploadedFile($event, video, i)" [rounded]="true"
+            severity="contrast" />
+
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  }
+
+  @if(otherFiles.length>0){
+  <div class="attachment">
+    <p class="attachment_title"><i class="ri-file-upload-line attachment_title_icon"></i> files ({{otherFiles.length}})
+    </p>
+    <div class="files_container">
+      <ng-container *ngFor="let file of otherFiles, let index = index">
+        <div class="position-relative">
+          <div class="file">
+            <div class="icon">
+              <i [ngClass]="file.name |fileIcon"></i>
+            </div>
+            <div class="content">
+              <div class="name">
+                <p [title]="file.name">{{ file.name | maxCharacter:20 }}</p>
+              </div>
+              <div class="size">{{ formatSize(file.size) }}</div>
+            </div>
+          </div>
+          <p-button icon="pi pi-times" class="remove" (click)="onRemoveUploadedFile($event, file, index)"
+            [rounded]="true" severity="contrast"></p-button>
+        </div>
+      </ng-container>
+      
+      <!-- <ng-container *ngFor="let file of otherFiles , let index=index">
+        <div class="position-relative">
+          <div class="file">
+            <div class="icon"> <i class="fa-regular fa-file"></i> </div>
+            <div class="content">
+              <div class="name"> <p [title]="file.name">  {{file.name | maxCharacter:20}}</p> </div>
+              <div class="size">  {{ formatSize(file.size)  }} </div>
+            </div>
+          </div>
+          <p-button icon="pi pi-times" class="remove" (click)="onRemoveUploadedFile($event, file, index)"
+            [rounded]="true" severity="contrast" />
+        </div>
+      </ng-container> -->
+    </div>
+
+
+  </div>
+  }
+  }
+</div>

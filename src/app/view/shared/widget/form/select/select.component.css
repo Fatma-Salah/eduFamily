@@ -1,0 +1,80 @@
+p{margin: 0;}
+:host ::ng-deep .p-dropdown {
+  width: 100%;
+  /* width: 200px; */
+  height: 50px;
+  font-size: 15px;
+  align-items: center;
+    border-radius: 7px ;
+    border-color: #e5e5e5;
+    /* box-shadow: 0.5px 0.5px 6px 0px rgba(0, 0, 0, 0.1); */
+  /* border: none; */
+}
+
+:host ::ng-deep .p-dropdown-panel {
+  margin-top: 3px;
+  border-radius:0px 0px 15px 15px;
+}
+:host ::ng-deep .p-dropdown:not(.p-disabled).p-focus {
+/* box-shadow:  0  0  0  0.2rem  var(--mainBg); */
+box-shadow: none;
+border-color: var(--activeBorder);
+} 
+:host ::ng-deep  .p-calendar:not(.p-calendar-disabled).p-focus > .p-inputtext {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #BFDBFE;
+  border-color: #3B82F6;
+}
+:host ::ng-deep  .p-dropdown .p-dropdown-label {
+  color: #000 ;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  /* font-family: Almarai; */
+}
+:host ::ng-deep .p-dropdown .p-dropdown-trigger{
+  width: max-content;
+  position: absolute;
+  right: 12px;
+  color: #656565;
+}
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight,
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled).p-focus {
+  /* color: #027180; */
+  /* background: rgb(231, 235, 229); */
+  background: var(--mainBg) ;
+  color: #656565;
+}
+
+:host ::ng-deep .p-inputtext{padding: 16px !important;}
+
+:host ::ng-deep  .p-dropdown-panel {
+width: 100%;
+}
+:host ::ng-deep  .p-dropdown .p-dropdown-label.p-placeholder {
+color: #6c757d;
+}
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+
+  background: var(--mainBg)  !important;
+}
+
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items {
+padding:  10px 5px !important;
+border-radius:  15px !important;
+}
+:host ::ng-deep .p-dropdown-panel li.p-element {
+/* border-radius: 0px 0px 15px 15px !important; */
+padding: 5px;
+}
+:host ::ng-deep .dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+border-radius: 0px 0px 15px 15px !important;
+}
+.title{
+  text-transform: capitalize;
+  display: block;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 1rem;
+}

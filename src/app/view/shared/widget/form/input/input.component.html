@@ -1,0 +1,26 @@
+
+    <div class="input-group"    [ngStyle]="{width:width}">
+        <label [for]="name"  [ngStyle]="{'font-size': fontSize}">{{label}}</label>
+    <ng-container *ngIf="type !== 'date' && type !== 'time'">
+
+        <input
+          [type]="type"
+          [name]="name"
+          [id]="name"
+          [formControl]="control"
+          [value]="value"
+          class="input"
+          [placeholder]="placeholder"
+          [readOnly]="readonly"
+        />
+
+    </ng-container>
+
+    <ng-container class="input-date-group" *ngIf="type === 'time'">
+        component for time
+    </ng-container>
+
+    <ng-container *ngIf="type === 'date'">
+        component for time
+    </ng-container>
+  </div>

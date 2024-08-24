@@ -1,0 +1,60 @@
+::ng-deep .p-input-icon-right > .p-icon-wrapper {
+  margin-top: -0.5rem;
+}
+
+:host ::ng-deep .p-calendar .p-inputtext  {
+  padding-left: 16px;
+}
+:host ::ng-deep .p-calendar ,:host ::ng-deep .p-inputtext  {
+  width: 100%;
+    height: 40px;
+    align-items: center;
+      border-radius: 7px ;
+    border-color: #e5e5e5;
+}
+:host ::ng-deep .p-datepicker {
+  margin-top: 3px !important;
+  min-width: 100%;
+  border-radius:0px 0px 15px 15px;
+}
+
+  :host ::ng-deep  .p-calendar:not(.p-calendar-disabled).p-focus > .p-inputtext {
+    box-shadow:  0  0  0  0.2rem  var(--mainBg) ;
+    padding-left: 16px;
+    }
+  :host ::ng-deep  .p-calendar .p-calendar-label {
+      color: #000 ;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      padding: 16px;
+      font-family: Almarai;
+    }
+    :host ::ng-deep .p-calendar .p-calendar-trigger{
+      width: max-content;
+      position: absolute;
+      right: 12px;
+      color: #656565;
+    }
+
+    :host ::ng-deep  .p-calendar-panel {
+      /* width: 200px; */
+      width: 100%;
+      }
+:host ::ng-deep .p-calendar-panel .p-calendar-items .p-calendar-item.p-focus {
+  /* color: #027180; */
+  /* background: rgb(231, 235, 229); */
+  background: var(--mainBg) ;
+  color: #656565;
+}
+
+/* :host ::ng-deep .p-datepicker-calendar  {
+  margin-left: 16px;
+} */
+
+.title{
+text-transform: capitalize;
+display: block;
+font-weight: 500;
+color: #000;
+}

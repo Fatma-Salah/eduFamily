@@ -1,0 +1,10 @@
+
+<ng-container *ngIf="!isLoading">
+  <button type="submit" class="btn button  " [ngClass]="{ 'disabled': disabled }" [ngStyle]="{'background':bg,'padding':padding}"> {{content}}  </button>
+</ng-container>
+<ng-container *ngIf="isLoading">
+  <div class="button btn">
+    <span  class="spinner-border "></span>
+  </div>
+
+</ng-container>

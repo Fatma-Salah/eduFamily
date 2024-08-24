@@ -1,0 +1,38 @@
+.carousel-item{
+    height: 100vh;
+}
+.carousel-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.carousel-caption {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%; 
+    right:auto;
+    color:black;
+    text-align: left;
+}
+.carousel_title{
+    color: var(--mainColor);
+    text-transform: uppercase;
+    font-weight: 700px;
+    font-size: 20px;
+}
+.carousel_desc{
+    font-size: 30px; 
+    text-transform: capitalize;
+}
+.btns{
+    display: flex;
+    gap: 30px;
+}
+.btns a{
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    background: var(--mainColor);
+    border: none;
+}
